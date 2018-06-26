@@ -7,38 +7,50 @@
 //
 
 import UIKit
+import Kingfisher
 
-class MyAccountViewController: UIViewController {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        <#code#>
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-//
+
+class MyAccountViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+  
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+
 
     @IBOutlet weak var imgSelectedImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Networking.net.getData {
+            self.collectionView.reloadData()
+        }
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+        self.navigationItem.hidesBackButton = true
+    
+    }
+    //MARK:- CollectionView Datasource Methods
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return Networking.net.dataArray.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ImageCollectionViewCell
+           cell.imgImageView.kf.setImage(with: Networking.net.dataArray[indexPath.row].imgURL) 
+           cell.lblImgTitle.text = Networking.net.dataArray[indexPath.row].title
+        
+    
+           return cell
     }
-    */
+    //MARK:- CollectionView Delegate Methods
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = self.view.frame.size.width/2
+        return CGSize(width: width, height: width)
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+      
+    }
 
 }

@@ -21,7 +21,7 @@ class SignUPViewController: UIViewController {
     //Variable Declairation
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var userDetailArray = [UserDetails]()
+ 
    var userInfo : UserDetails?
    
     override func viewDidLoad() {
@@ -31,25 +31,39 @@ class SignUPViewController: UIViewController {
     }
 
     @IBAction func btnSignUpTapped(_ sender: UIButton) {
+        //checking for empty textfeilds
+        
+        if((txtName.text?.isEmpty)! || (txtPassword.text?.isEmpty)! || (txtMobileNo.text?.isEmpty)! || (txtEmail.text?.isEmpty)!)
+        {
+            displayAlert(userMessage: "All feilds are required")
+        }
+        
+        
+        //storing User data to coreData
+        
         userInfo = UserDetails(context: context)
         userInfo?.name = txtName.text
         userInfo?.email = txtEmail.text
         userInfo?.mobile = txtMobileNo.text
-        userInfo?.password = txtMobileNo.text
-        
-        
-//        userDetailArray.append(userInfo!)
+        userInfo?.password = txtPassword.text
         saveData()
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let lvc = storyboard.instantiateViewController(withIdentifier: "lvc") as? LoginViewController
-        navigationController?.pushViewController(lvc!, animated: true)
+        
+//        Display  alert for registration confirmation
+        let confirm = UIAlertController(title: "Success", message: "Registration Succesfull", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let lvc = storyboard.instantiateViewController(withIdentifier: "lvc") as? LoginViewController
+            self.navigationController?.pushViewController(lvc!, animated: true)
+        }
+        confirm.addAction(okAction)
+        self.present(confirm, animated: true, completion: nil)
         
         
     }
     @IBAction func btnAddProfilePicture(_ sender: Any) {
     }
-    
-    
+ 
+    //func to save context into core data
     func saveData()
     {
         do{
@@ -60,17 +74,12 @@ class SignUPViewController: UIViewController {
         }
         
     }
-//    func loadData()
-//    {
-//        let request : NSFetchRequest<UserDetails> = UserDetails.fetchRequest()
-//       do
-//       {
-//         try userDetailArray = context.fetch(request)
-//        }
-//
-//       catch{
-//           print("Error during fetching data")
-//        }
-  //  }
+    func displayAlert(userMessage:String)
+    {
+        let alert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        self.present(alert, animated: true, completion: nil)
+    }
     
 }
