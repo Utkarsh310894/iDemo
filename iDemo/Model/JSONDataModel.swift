@@ -13,6 +13,15 @@ class JSONData{
     
    var imgURL : URL? = nil
     var title : String?
-    var parsedImage : UIImage?
+    var state : Bool? = false
+   
+}
+
+
+
+class ImageData
+{
+    var imageURL : URL? = nil
+    var imageTitle : String?
 }
 

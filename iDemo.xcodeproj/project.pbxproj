@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		011E3968999661A0185BE22D /* Pods_iDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C42ABF2CC337062D5D41910 /* Pods_iDemo.framework */; };
+		E8410A1020E378F600321E19 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410A0F20E378F600321E19 /* FavoriteTableViewController.swift */; };
+		E8410A1220E3791200321E19 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410A1120E3791200321E19 /* DisplayViewController.swift */; };
+		E8464CE620E4A09F00C7A0B1 /* DropdownTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */; };
 		E8A7CB0720E0F33000D6074D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7CB0620E0F33000D6074D /* Networking.swift */; };
 		E8F0EEE320E12213004F7B10 /* JSONDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0EEE220E12213004F7B10 /* JSONDataModel.swift */; };
 		E8F0EEE520E13024004F7B10 /* TextFeildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */; };
@@ -27,6 +30,9 @@
 		373E2B9262343280243622FE /* Pods-iDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iDemo/Pods-iDemo.release.xcconfig"; sourceTree = "<group>"; };
 		8C42ABF2CC337062D5D41910 /* Pods_iDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE15076C7ED00590B3BB76F9 /* Pods-iDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iDemo/Pods-iDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E8410A0F20E378F600321E19 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
+		E8410A1120E3791200321E19 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
+		E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTable.swift; sourceTree = "<group>"; };
 		E8A7CB0620E0F33000D6074D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E8F0EEE220E12213004F7B10 /* JSONDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataModel.swift; sourceTree = "<group>"; };
 		E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFeildExtension.swift; sourceTree = "<group>"; };
@@ -76,7 +82,9 @@
 		E8F0EEE620E1302F004F7B10 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */,
 				E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */,
+				E8A7CB0620E0F33000D6074D /* Networking.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,7 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				E8F7424F20DCC77E00C7832D /* AppDelegate.swift */,
-				E8A7CB0620E0F33000D6074D /* Networking.swift */,
+				E8410A0F20E378F600321E19 /* FavoriteTableViewController.swift */,
+				E8410A1120E3791200321E19 /* DisplayViewController.swift */,
 				E8F7425120DCC77E00C7832D /* ViewController.swift */,
 				E8F7426A20DD1DFC00C7832D /* MyAccountViewController.swift */,
 				E8F7426820DD1CF800C7832D /* ImageCollectionViewCell.swift */,
@@ -230,6 +239,8 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iDemo/Pods-iDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDownMenuKit/DropDownMenuKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -238,6 +249,8 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDownMenuKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -277,7 +290,10 @@
 				E8F7425220DCC77E00C7832D /* ViewController.swift in Sources */,
 				E8A7CB0720E0F33000D6074D /* Networking.swift in Sources */,
 				E8F7426B20DD1DFC00C7832D /* MyAccountViewController.swift in Sources */,
+				E8410A1020E378F600321E19 /* FavoriteTableViewController.swift in Sources */,
 				E8F7426520DD046900C7832D /* SignUPViewController.swift in Sources */,
+				E8410A1220E3791200321E19 /* DisplayViewController.swift in Sources */,
+				E8464CE620E4A09F00C7A0B1 /* DropdownTable.swift in Sources */,
 				E8F7426720DD0CDB00C7832D /* LoginViewController.swift in Sources */,
 				E8F0EEE520E13024004F7B10 /* TextFeildExtension.swift in Sources */,
 				E8F0EEE320E12213004F7B10 /* JSONDataModel.swift in Sources */,
@@ -426,7 +442,9 @@
 			baseConfigurationReference = CE15076C7ED00590B3BB76F9 /* Pods-iDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,6 +452,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.solutionanalysts.iDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -444,7 +463,9 @@
 			baseConfigurationReference = 373E2B9262343280243622FE /* Pods-iDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +473,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.solutionanalysts.iDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

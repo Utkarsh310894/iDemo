@@ -17,23 +17,22 @@ import SVProgressHUD
 class Networking: UIViewController {
     
     static let net = Networking()
-    let url = "https://rss.itunes.apple.com/api/v1/us/apple-music/new-releases/country/10/explicit.json"
-    let country = ""
-    let feedType = ""
-    let genre = ""
-    
+    let url = "https://rss.itunes.apple.com/api/v1/us/itunes-music/recent-releases/all/10/explicit.json"
+    var baseURL = "https://rss.itunes.apple.com/api/v1/"
     
     // JSON PARSING
     var dataArray = [JSONData]()
-    func getData(finished : @escaping () -> Void)
+  
+    func getData(url: String = "https://rss.itunes.apple.com/api/v1/us/itunes-music/hot-tracks/all/10/explicit.json" ,finished : @escaping () -> Void)
     {
+        dataArray.removeAll()
         Alamofire.request(url, method: .get).responseJSON{
             response in
             if response.result.isSuccess
             {
                 print("Got the JSON data")
-                let jsonData : JSON = JSON(response.result.value)
-                print(jsonData)
+                let jsonData : JSON = JSON(response.result.value!)
+                  print(jsonData)
                  let tempdata = jsonData["feed"]["results"]
                 
                 for (index,_) in tempdata.enumerated()
