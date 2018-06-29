@@ -13,7 +13,7 @@ class JSONData{
     
    var imgURL : URL? = nil
     var title : String?
-    var state : Bool? = false
+    var state : Bool = false
    
 }
 

@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 class DisplayViewController: UIViewController {
-
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    var showData = JSONData()
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        
+    imageView.kf.setImage(with: showData.imgURL)
+    lblTitle.text = showData.title
         // Do any additional setup after loading the view.
     }
 

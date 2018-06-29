@@ -17,12 +17,12 @@ import SVProgressHUD
 class Networking: UIViewController {
     
     static let net = Networking()
-    let url = "https://rss.itunes.apple.com/api/v1/us/itunes-music/recent-releases/all/10/explicit.json"
+
     var baseURL = "https://rss.itunes.apple.com/api/v1/"
     
     // JSON PARSING
     var dataArray = [JSONData]()
-  
+
     func getData(url: String = "https://rss.itunes.apple.com/api/v1/us/itunes-music/hot-tracks/all/10/explicit.json" ,finished : @escaping () -> Void)
     {
         dataArray.removeAll()

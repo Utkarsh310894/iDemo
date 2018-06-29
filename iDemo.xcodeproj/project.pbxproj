@@ -11,6 +11,7 @@
 		E8410A1020E378F600321E19 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410A0F20E378F600321E19 /* FavoriteTableViewController.swift */; };
 		E8410A1220E3791200321E19 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410A1120E3791200321E19 /* DisplayViewController.swift */; };
 		E8464CE620E4A09F00C7A0B1 /* DropdownTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */; };
+		E8464CE820E50F1900C7A0B1 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8464CE720E50F1900C7A0B1 /* FavouriteTableViewCell.swift */; };
 		E8A7CB0720E0F33000D6074D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7CB0620E0F33000D6074D /* Networking.swift */; };
 		E8F0EEE320E12213004F7B10 /* JSONDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0EEE220E12213004F7B10 /* JSONDataModel.swift */; };
 		E8F0EEE520E13024004F7B10 /* TextFeildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */; };
@@ -33,6 +34,7 @@
 		E8410A0F20E378F600321E19 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		E8410A1120E3791200321E19 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTable.swift; sourceTree = "<group>"; };
+		E8464CE720E50F1900C7A0B1 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		E8A7CB0620E0F33000D6074D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E8F0EEE220E12213004F7B10 /* JSONDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataModel.swift; sourceTree = "<group>"; };
 		E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFeildExtension.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				E8F7424F20DCC77E00C7832D /* AppDelegate.swift */,
+				E8464CE720E50F1900C7A0B1 /* FavouriteTableViewCell.swift */,
 				E8410A0F20E378F600321E19 /* FavoriteTableViewController.swift */,
 				E8410A1120E3791200321E19 /* DisplayViewController.swift */,
 				E8F7425120DCC77E00C7832D /* ViewController.swift */,
@@ -296,6 +299,7 @@
 				E8464CE620E4A09F00C7A0B1 /* DropdownTable.swift in Sources */,
 				E8F7426720DD0CDB00C7832D /* LoginViewController.swift in Sources */,
 				E8F0EEE520E13024004F7B10 /* TextFeildExtension.swift in Sources */,
+				E8464CE820E50F1900C7A0B1 /* FavouriteTableViewCell.swift in Sources */,
 				E8F0EEE320E12213004F7B10 /* JSONDataModel.swift in Sources */,
 				E8F7425020DCC77E00C7832D /* AppDelegate.swift in Sources */,
 			);

@@ -16,12 +16,5 @@ class ViewController: UIViewController {
        
     }
 
-    
-
-    @IBAction func btnSignUp(_ sender: UIButton) {
-    }
-    
-    @IBAction func btnLogin(_ sender: UIButton) {
-    }
 }
 

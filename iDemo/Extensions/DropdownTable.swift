@@ -79,6 +79,7 @@ extension MyAccountViewController : UITableViewDelegate,UITableViewDataSource
         
         
         Networking.net.getData(url: dynamicURL!) {
+            
             self.collectionView.reloadItems(at: [indexPath])
             self.imgSelectedImage.kf.setImage(with: Networking.net.dataArray[0].imgURL)
             self.collectionView.reloadData()
