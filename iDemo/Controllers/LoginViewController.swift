@@ -16,7 +16,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtUserName: UITextField!
     
     var userDetailArray = [UserDetails]()
-    let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
@@ -29,7 +28,7 @@ class LoginViewController: UIViewController {
          let predicate = NSPredicate(format: "email MATCHES %@", txtUserName.text!)
          request.predicate = predicate
         do{
-            userDetailArray = (try context?.fetch(request))!
+            userDetailArray = (try CoreData.core.context.fetch(request))
             
             if(userDetailArray.count != 0)
             {

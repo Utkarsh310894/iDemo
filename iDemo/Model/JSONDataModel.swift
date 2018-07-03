@@ -14,14 +14,7 @@ class JSONData{
    var imgURL : URL? = nil
     var title : String?
     var state : Bool = false
+    var  id : String?
    
-}
-
-
-
-class ImageData
-{
-    var imageURL : URL? = nil
-    var imageTitle : String?
 }
 

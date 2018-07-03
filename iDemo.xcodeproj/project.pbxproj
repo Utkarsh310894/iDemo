@@ -12,6 +12,8 @@
 		E8410A1220E3791200321E19 /* DisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8410A1120E3791200321E19 /* DisplayViewController.swift */; };
 		E8464CE620E4A09F00C7A0B1 /* DropdownTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */; };
 		E8464CE820E50F1900C7A0B1 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8464CE720E50F1900C7A0B1 /* FavouriteTableViewCell.swift */; };
+		E899470820EB3C6D004806FB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899470720EB3C6D004806FB /* CoreData.swift */; };
+		E899470A20EB818C004806FB /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E899470920EB818C004806FB /* CollectionViewExtension.swift */; };
 		E8A7CB0720E0F33000D6074D /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A7CB0620E0F33000D6074D /* Networking.swift */; };
 		E8F0EEE320E12213004F7B10 /* JSONDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0EEE220E12213004F7B10 /* JSONDataModel.swift */; };
 		E8F0EEE520E13024004F7B10 /* TextFeildExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */; };
@@ -35,6 +37,8 @@
 		E8410A1120E3791200321E19 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
 		E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownTable.swift; sourceTree = "<group>"; };
 		E8464CE720E50F1900C7A0B1 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
+		E899470720EB3C6D004806FB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		E899470920EB818C004806FB /* CollectionViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		E8A7CB0620E0F33000D6074D /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		E8F0EEE220E12213004F7B10 /* JSONDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDataModel.swift; sourceTree = "<group>"; };
 		E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFeildExtension.swift; sourceTree = "<group>"; };
@@ -81,12 +85,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E899470420EB3BE2004806FB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E899470620EB3C2B004806FB /* Consts */,
+				E8F0EEE620E1302F004F7B10 /* Extensions */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		E899470520EB3C13004806FB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E8A7CB0620E0F33000D6074D /* Networking.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E899470620EB3C2B004806FB /* Consts */ = {
+			isa = PBXGroup;
+			children = (
+				E899470720EB3C6D004806FB /* CoreData.swift */,
+			);
+			path = Consts;
+			sourceTree = "<group>";
+		};
 		E8F0EEE620E1302F004F7B10 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E899470920EB818C004806FB /* CollectionViewExtension.swift */,
 				E8464CE520E4A09F00C7A0B1 /* DropdownTable.swift */,
 				E8F0EEE420E13024004F7B10 /* TextFeildExtension.swift */,
-				E8A7CB0620E0F33000D6074D /* Networking.swift */,
+				E899470520EB3C13004806FB /* Services */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -115,7 +145,7 @@
 				E8F7426F20DD227600C7832D /* Model */,
 				E8F7426C20DD220800C7832D /* View */,
 				E8F7426D20DD222900C7832D /* Controllers */,
-				E8F0EEE620E1302F004F7B10 /* Extensions */,
+				E899470420EB3BE2004806FB /* Utils */,
 				E8F7426E20DD225600C7832D /* Resources */,
 				E8F7425E20DCC77F00C7832D /* Info.plist */,
 			);
@@ -241,9 +271,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iDemo/Pods-iDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
-				"${BUILT_PRODUCTS_DIR}/DropDownMenuKit/DropDownMenuKit.framework",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -251,9 +279,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDownMenuKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -292,6 +318,7 @@
 				E8F7425820DCC77E00C7832D /* iDemo.xcdatamodeld in Sources */,
 				E8F7425220DCC77E00C7832D /* ViewController.swift in Sources */,
 				E8A7CB0720E0F33000D6074D /* Networking.swift in Sources */,
+				E899470820EB3C6D004806FB /* CoreData.swift in Sources */,
 				E8F7426B20DD1DFC00C7832D /* MyAccountViewController.swift in Sources */,
 				E8410A1020E378F600321E19 /* FavoriteTableViewController.swift in Sources */,
 				E8F7426520DD046900C7832D /* SignUPViewController.swift in Sources */,
@@ -299,6 +326,7 @@
 				E8464CE620E4A09F00C7A0B1 /* DropdownTable.swift in Sources */,
 				E8F7426720DD0CDB00C7832D /* LoginViewController.swift in Sources */,
 				E8F0EEE520E13024004F7B10 /* TextFeildExtension.swift in Sources */,
+				E899470A20EB818C004806FB /* CollectionViewExtension.swift in Sources */,
 				E8464CE820E50F1900C7A0B1 /* FavouriteTableViewCell.swift in Sources */,
 				E8F0EEE320E12213004F7B10 /* JSONDataModel.swift in Sources */,
 				E8F7425020DCC77E00C7832D /* AppDelegate.swift in Sources */,

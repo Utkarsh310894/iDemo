@@ -60,37 +60,28 @@ extension MyAccountViewController : UITableViewDelegate,UITableViewDataSource
             countryURL = country[indexPath.row]
             countryList.isHidden = true
             SVProgressHUD.show()
+        
         }
         if tableView == self.feedList
         {
             feedTypeURL = feedType[indexPath.row]
             feedList.isHidden = true
             SVProgressHUD.show()
-          
-            
         }
         if tableView == self.genreList
         {
             genreURL = genre[indexPath.row]
             genreList.isHidden = true
             SVProgressHUD.show()
-            
         }
-        
+//      MARK:- Dynamic Networking
         
         Networking.net.getData(url: dynamicURL!) {
-            
-            self.collectionView.reloadItems(at: [indexPath])
             self.imgSelectedImage.kf.setImage(with: Networking.net.dataArray[0].imgURL)
+            self.parsedData = Networking.net.dataArray
             self.collectionView.reloadData()
-            
+            self.collectionView.reloadItems(at: [indexPath])
         }
-        
-        
     }
-    
-
-    
- 
-    
+   
 }

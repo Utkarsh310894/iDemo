@@ -7,13 +7,12 @@
 //
 
 import UIKit
-protocol unfavorite{
-    func unfavoriteButtontapped(sender: FavouriteTableViewCell,index:Int)
-    
-    }
+protocol deleteCellDelegate{
+    func unfavouriteButtontapped(sender: FavouriteTableViewCell,state: Bool)
+}
 
 class FavouriteTableViewCell: UITableViewCell {
-    var index : unfavorite?
+    var unfavouriteDelegate :  deleteCellDelegate?
     @IBOutlet weak var favoriteImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,4 +25,7 @@ class FavouriteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func unfavoriteButtonTapped(_ sender: UIButton) {
+        unfavouriteDelegate?.unfavouriteButtontapped(sender: self, state: !sender.isSelected)
+    }
 }

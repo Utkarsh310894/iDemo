@@ -9,10 +9,10 @@ target 'iDemo' do
 
     pod 'Alamofire'
     pod 'SwiftyJSON'
-    pod 'AlamofireImage'
+    pod 'ChameleonFramework'
     pod 'Kingfisher'
     pod 'SVProgressHUD'
-    pod 'DropDownMenuKit'
-    pod 'DropDown'
+  
+   
 
 end

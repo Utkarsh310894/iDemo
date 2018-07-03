@@ -10,26 +10,21 @@ import UIKit
 import CoreData
 import Kingfisher
 
-class FavoriteTableViewController: UITableViewController{
-  
-
+class FavoriteTableViewController: UITableViewController,deleteCellDelegate{
+    func unfavouriteButtontapped(sender: FavouriteTableViewCell, state: Bool) {
+        guard let index = tableView.indexPath(for: sender) else{return}
+       CoreData.core.context.delete(favArray[index.row]!)
+       favArray.remove(at: index.row)
+       CoreData.core.saveData()
+        tableView.reloadData()
+    }
     var favArray : [Favorite?] = []
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var cellIndex : Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-        favArray.removeAll()
-        let request : NSFetchRequest<Favorite> = Favorite.fetchRequest()
-        do{
-              favArray = try context.fetch(request)
-        }
-        catch{
-              print("Error during fetching data")
-        }
-    
+        favArray = CoreData.core.loadData()
     }
     override func viewWillAppear(_ animated: Bool) {
-        favArray.removeAll()
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -48,6 +43,7 @@ class FavoriteTableViewController: UITableViewController{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FavouriteTableViewCell
         cell.favoriteImage.kf.setImage(with: URL(string: (favArray[indexPath.row]?.imageUrl)!))
+        cell.unfavouriteDelegate=self
         return cell
     }
 
@@ -103,10 +99,7 @@ class FavoriteTableViewController: UITableViewController{
         // Pass the selected object to the new view controller.
     }
     */
+ 
     
-    @IBAction func unfavouriteButtonTapped(_ sender: UIButton) {
-      
-        
-    }
     
 }

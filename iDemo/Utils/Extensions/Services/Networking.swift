@@ -1,4 +1,4 @@
-//
+ //
 //  Networking.swift
 //  iDemo
 //
@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import SwiftyJSON
 import Alamofire
-import AlamofireImage
 import SVProgressHUD
 
 
@@ -37,10 +36,11 @@ class Networking: UIViewController {
                 
                 for (index,_) in tempdata.enumerated()
                    {
-                    if let url = tempdata[index]["artworkUrl100"].url, let title = tempdata[index]["name"].string{
+                    if let url = tempdata[index]["artworkUrl100"].url, let title = tempdata[index]["name"].string, let id = tempdata[index]["id"].string{
                         let object = JSONData()
                         object.title = title
                         object.imgURL = url
+                        object.id = id
                         self.dataArray.append(object)
                         if index == tempdata.count-1
                         {
@@ -49,7 +49,6 @@ class Networking: UIViewController {
                         }
                     }
                 }
-               
             }
             else{
                 print("Error\(String(describing: response.result.error))")
