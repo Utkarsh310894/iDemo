@@ -16,7 +16,7 @@ class FavoriteTableViewController: UITableViewController,deleteCellDelegate{
        CoreData.core.context.delete(favArray[index.row]!)
        favArray.remove(at: index.row)
        CoreData.core.saveData()
-        tableView.reloadData()
+       tableView.reloadData()
     }
     var favArray : [Favorite?] = []
     override func viewDidLoad() {

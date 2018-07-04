@@ -59,17 +59,14 @@ class MyAccountViewController:UIViewController {
         }
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
         
         loadArray.removeAll()
         loadData()
         self.collectionView.reloadData()
         self.navigationItem.hidesBackButton = true
-
     }
     
-
     // MARK:- Checking DataBase
     
     func loadData()
@@ -77,7 +74,7 @@ class MyAccountViewController:UIViewController {
         for objectState in parsedData{
             objectState?.state = false
         }
-         var loadArray = CoreData.core.loadData()
+          var loadArray = CoreData.core.loadData()
             for (items) in loadArray
             {
                 for element in parsedData
@@ -87,7 +84,7 @@ class MyAccountViewController:UIViewController {
                      element?.state = true
                     }
                 }
-            }
+        }
     }
 
     //MARK:- Filter Button Actions
